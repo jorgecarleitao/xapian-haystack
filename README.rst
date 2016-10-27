@@ -45,7 +45,7 @@ In particular, we build this backend on `Travis`_ using:
 - Python 2.7 and 3.3
 - Django 1.8, 1.9 and 1.10
 - Django-Haystack (master)
-- Xapian 1.2.19 (in Python 2) and 1.3.3 (in both)
+- Xapian 1.2.19 (in Python 2), 1.3.7 (in both), and 1.4.1 (in both with Django 1.8 only)
 
 
 Installation
