@@ -37,6 +37,14 @@ else
     XAPIAN_CONFIG=
 fi
 
+# The bindings for Python require python-sphinx
+echo "Installing Python-Sphinx..."
+if [ $PYV = "2" ]; then
+    apt-get install python-sphinx
+else
+    apt-get install python3-sphinx
+fi
+
 echo "Installing Xapian-bindings..."
 cd $VIRTUAL_ENV/packages/${BINDINGS}
 ./configure --prefix=$VIRTUAL_ENV $PYTHON_FLAG XAPIAN_CONFIG=$XAPIAN_CONFIG && make && make install
