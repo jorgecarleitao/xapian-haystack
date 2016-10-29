@@ -37,10 +37,6 @@ else
     XAPIAN_CONFIG=
 fi
 
-# The bindings for Python require python-sphinx
-echo "Installing Python-Sphinx..."
-pip install sphinx
-
 echo "Installing Xapian-bindings..."
 cd $VIRTUAL_ENV/packages/${BINDINGS}
 ./configure --prefix=$VIRTUAL_ENV $PYTHON_FLAG XAPIAN_CONFIG=$XAPIAN_CONFIG && make && make install
@@ -49,4 +45,6 @@ cd $VIRTUAL_ENV/packages/${BINDINGS}
 rm -rf $VIRTUAL_ENV/packages
 
 # test
+echo "Testing Xapian..."
+ls $VIRTUAL_ENV/lib/python2.7/site-packages/xapian
 python -c "import xapian"
