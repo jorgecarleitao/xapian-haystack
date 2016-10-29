@@ -50,6 +50,5 @@ rm -rf $VIRTUAL_ENV/packages
 
 # test
 echo "Testing Xapian..."
-ls $VIRTUAL_ENV/lib/python2.7/site-packages/xapian
-ls $VIRTUAL_ENV/lib/python3.4/site-packages/xapian
+python -c "import sys; print(sys.path)"
 python -c "import xapian"
