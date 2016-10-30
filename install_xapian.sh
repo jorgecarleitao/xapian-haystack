@@ -45,10 +45,10 @@ echo "Installing Xapian-bindings..."
 cd $VIRTUAL_ENV/packages/${BINDINGS}
 ./configure --prefix=$VIRTUAL_ENV $PYTHON_FLAG XAPIAN_CONFIG=$XAPIAN_CONFIG && make && make install
 
-# clean
-rm -rf $VIRTUAL_ENV/packages
-
 # test
 echo "Testing Xapian..."
 python -c "import sys, os; print(sys.path); print(os.listdir(sys.path[-1] + '/xapian'))"
 python -c "import xapian"
+
+# clean
+rm -rf $VIRTUAL_ENV/packages
