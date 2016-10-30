@@ -43,6 +43,7 @@ install:
 
 script:
   - cd django-haystack/
+  - PYTHONPATH=`pwd` python -c "import sys, os; print(sys.path); print(os.listdir(sys.path[-1] + '/xapian'))"
   - PYTHONPATH=`pwd` coverage run `which django-admin.py` test test_haystack.xapian_tests --settings=test_haystack.xapian_settings
 
 after_success: coveralls
