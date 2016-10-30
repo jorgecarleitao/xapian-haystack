@@ -50,5 +50,5 @@ rm -rf $VIRTUAL_ENV/packages
 
 # test
 echo "Testing Xapian..."
-python -c "import sys; print(sys.path)"
+python -c "import sys, os; print(sys.path); print(os.listdir(sys.path[-1] + '/xapian'))"
 python -c "import xapian"
