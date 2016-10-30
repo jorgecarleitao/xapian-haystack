@@ -31,7 +31,7 @@ else
     PYTHON_FLAG=--with-python3
 fi
 
-if [ $VERSION = "1.3.7" ]; then
+if [ $VERSION = "1.3.3" ]; then
     XAPIAN_CONFIG=$VIRTUAL_ENV/bin/xapian-config-1.3
 else
     XAPIAN_CONFIG=
