@@ -43,6 +43,6 @@ install:
 
 script:
   - cd django-haystack/
-  - coverage run `which django-admin.py` test test_haystack.xapian_tests --settings=test_haystack.xapian_settings
+  - PYTHONPATH=`pwd` coverage run `which django-admin.py` test test_haystack.xapian_tests --settings=test_haystack.xapian_settings
 
 after_success: coveralls
