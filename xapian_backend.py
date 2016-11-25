@@ -1432,7 +1432,8 @@ class XapianSearchQuery(BaseSearchQuery):
 
         Assumes term is not a list.
         """
-        if field_type == 'text':
+        # `django_id` is not a normal text, and as such we should not use the phrase query.
+        if field_type == 'text' and field_name != 'django_id':
             term = '^ %s $' % term
             query = self._phrase_query(term.split(), field_name, field_type)
         else:
